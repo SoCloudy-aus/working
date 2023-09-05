@@ -1,0 +1,12 @@
+{% layout none %}
+{{ 'theme.js' | asset_url | script_tag }}
+{% include 'product-json' %}
+{% include 'ajaxify-cart' %}
+<div class="row product-quick-view">
+  {% section 'product-template' %}
+</div>
+<script>
+{% if settings.show_payment_button %}
+  Shopify.PaymentButton.init()
+{% endif %}
+</script>
